@@ -723,7 +723,28 @@ sup{
         width: 100%;
         max-width: 100%;
     }
-    
+    .a-drop .users{
+        display: flex;
+        flex-direction: column;
+        padding-left: 5px;
+    }
+    .a-drop ul{
+        margin-top: 150px;
+        display: justify;
+        overflow: visible;
+    }
+    .without{
+        display: flex;
+        flex-direction: row;
+        overflow: scroll;
+    }
+    .cry{
+        width: 100%;
+        height: fit-content;
+        padding-left: 2%;
+        justify-self: center;
+        align-self: center;
+    }
     .it { 
         flex-direction: column;
         margin: 60px 20px;
