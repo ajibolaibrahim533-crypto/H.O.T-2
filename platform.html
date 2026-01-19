@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platforms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <header>
+        <div class="navbar">
+        <div class="logoandnav">
+            <div class="logo"> <img src="360/logo.svg" alt="ex"> </div> 
+           <div>
+             <nav>
+                <ul class="hero">
+                    <li>Trading</li>
+                    <li>Markets</li>
+                    <li>Platforms</li>
+                    <li>Resources</li>
+                    <li>Company</li>
+                    <li>Partners</li>
+                </ul>
+            </nav>
+            </div>
+        </div>  
+         <div class="users">
+                   <button class="btn Register"><a href="Register.html">Register</a></button>
+                    <button class="btn Sign-In"><a href="Sign-in.html">Sign-In</a></button>
+                     <div class="crane">  <img class="world-icon" src="png/world-icon.png" alt="O"> <text class="lang">EN</text>
+                    </div>
+            </div>
+        </div>
+    </header> 
+    Balance: <button>$200,150.00</button>
+    <section class="deposit-panel" aria-labelledby="deposit-heading">
+        <h2 id="deposit-heading">Deposit to trade</h2>
+
+        <style>  
+        .deposit-panel{
+            max-width:720px;
+            margin:20px auto;
+            padding:22px;
+            background:#ffffff;
+            border-radius:12px;
+            box-shadow:0 8px 30px rgba(16,24,40,0.06);
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color:#0f172a;
+        }
+        .deposit-panel h2{
+            margin:0 0 14px;
+            font-size:1.125rem;
+            font-weight:600;
+        }
+        .deposit-form{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:12px 16px;
+            align-items:start;
+        }
+        .deposit-form label{
+            display:block;
+            font-size:0.875rem;
+            color:#475569;
+            margin-bottom:6px;
+        }
+        .deposit-form input[type="number"],
+        .deposit-form select{
+            grid-column: span 2;
+            width:100%;
+            padding:10px 12px;
+            border:1px solid #e6eef8;
+            border-radius:8px;
+            background:#fbfdff;
+            font-size:0.95rem;
+            outline:none;
+            transition:box-shadow .15s, border-color .15s;
+        }
+        .deposit-form input[type="number"]:focus,
+        .deposit-form select:focus{
+            border-color:#2b6df6;
+            box-shadow:0 6px 20px rgba(43,109,246,0.08);
+        }
+        .deposit-form .half{
+            grid-column: span 1;
+        }
+        .deposit-actions{
+            grid-column: span 2;
+            display:flex;
+            gap:10px;
+            margin-top:6px;
+        }
+        .btn{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            padding:10px 14px;
+            border-radius:8px;
+            font-weight:600;
+            cursor:pointer;
+            border:0;
+        }
+        .deposit-btn{
+            background:#0b63ff;
+            color:#fff;
+            box-shadow:0 6px 18px rgba(11,99,255,0.12);
+        }
+        .clear-btn{
+            background:transparent;
+            color:#0f172a;
+            border:1px solid #e6eef8;
+        }
+        .deposit-note{
+            grid-column: span 2;
+            font-size:0.85rem;
+            color:#64748b;
+            margin-top:8px;
+        }
+        @media (max-width:640px){
+            .deposit-form{grid-template-columns:1fr}
+            .deposit-form input[type="number"],
+            .deposit-form select,
+            .deposit-actions,
+            .deposit-note{grid-column:auto}
+            .deposit-actions{flex-direction:column}
+        }
+        </style>
+
+        <form id="deposit-form" class="deposit-form" novalidate>
+            <div class="field half">
+                <label for="amount">Amount (USD)</label>
+                <input id="amount" name="amount" type="number" min="1" step="0.01" placeholder="e.g. 250.00" required>
+            </div>
+
+            <div class="field half">
+                <label for="method">Payment method</label>
+                <select id="method" name="method" required>
+                    <option value="card">Credit / Debit Card</option>
+                    <option value="bank">Bank Transfer</option>
+                    <option value="crypto">Crypto</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+            </div>
+
+            <div class="deposit-actions">
+                <button type="submit" class="btn deposit-btn">Deposit</button>
+                <button type="button" class="btn clear-btn">Clear</button>
+            </div>
+
+            <p class="deposit-note">Minimum deposit: $1. Fees may apply depending on the payment method.</p>
+        </form>
+    </section>
+
+    <script>
+    document.getElementById('deposit-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var amountEl = document.getElementById('amount');
+        var methodEl = document.getElementById('method');
+        var amount = parseFloat(amountEl.value);
+        var method = methodEl.value;
+
+        if (!amount || amount < 1) {
+            alert('Enter a valid amount (minimum $1).');
+            amountEl.focus();
+            return;
+        }
+
+        // Placeholder: replace with real payment integration
+        alert('Deposit request submitted:\\nAmount: $' + amount.toFixed(2) + '\\nMethod: ' + method);
+        this.reset();
+    });
+
+    document.querySelector('.clear-btn').addEventListener('click', function () {
+        document.getElementById('deposit-form').reset();
+    });
+    </script>
+</body>
+</html>

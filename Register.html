@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up page</title>
-    <link rel="stylesheet" href="exness.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="signup-page">
      <header>
@@ -33,7 +33,7 @@
         </div>
     </header> 
         <form action="" class="my-form">
-           <h1> Fill out the following to sign up </h1>
+           <h3 style="margin: 40px 0px;"> Please fill the following to sign up </h3>
            <div class="SUform"> 
             <label for="">Name:</label>
            <input type="text" name="Name" id="" >
@@ -42,11 +42,15 @@
             <label for="">Email:</label>
            <input type="text" email="Name" id="" >
            </div>
+           <div class="SUform"> 
+            <label for="">Username:</label>
+           <input type="text" name="Username" id="" >
+           </div>
            <div class="SUform">
-            <label for="">Referral's Username</label>
+            <label for="">Referred by? Add Username, if applicable</label>
             <textarea name="message" id=""></textarea>
            </div>
-           <input class="SIbutton" type="submit" value="Submit" name="">
+           <input type="submit" value="Submit" name="" style="background-color: gold; border: none; padding: 4px; width: 10%; cursor: pointer;">
         </form>
 </body>
 </html>

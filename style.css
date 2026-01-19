@@ -17,6 +17,9 @@ header{
     background-color: white;
     color: #141D22;
 }
+.phoneheader{
+    display: none;
+}
 .navbar{
     margin: .75rem 0px .7rem;
     display: flex;
@@ -49,6 +52,57 @@ gap: 5rem;
     font-family:sans-serif;
     font-size: medium;
     font-weight: 30;
+}
+.nav-item{
+    position: relative;
+}
+.dropdown{
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+
+    padding: 32px 40px;
+    background: #fff;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    border-radius: 6px;
+
+    width: max-content;
+    min-width: 900px;
+    z-index: 1000;
+} 
+ 
+.nav-item:hover > .dropdown{
+    display: grid;
+}
+.nav-item:focus-within > .dropdown{
+    display: grid;
+}
+.dropdown-content{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.dropdown-content h4{
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+.dropdown-content a{
+    font-size: 14px;
+    color: #111827;
+    text-decoration: none;
+}
+.dropdown-content a:hover {
+    color: #f59e0b;
+}
+.nav-item{
+    padding: 16px 0;
+    display: inline-block;
 }
 .users{
  display: flex;
@@ -134,7 +188,7 @@ gap: 5rem;
 .clown{
     display: flex;
     flex-direction: row;
-    font-size: 18px;
+    font-size: 1.12rem;
     font-family: sans-serif;
     color: rgb(80, 80, 80);
     justify-content: space-between;
@@ -195,10 +249,11 @@ gap: 5rem;
     gap: 30px;
 }
 .iphone{
-    /* position: fixed; */
     padding: 35px 0px 75px;
-    width: 361px;
-    height: 608px;
+    /* width: 361px;
+    height: 608px; */
+      max-width: 100%;
+    height: auto;
 }
 .He{
     display: flex;
@@ -308,10 +363,12 @@ flex-direction: row;
     gap: 20px;
 }
 .feels{
-   height: 566.5px;
-   width: 566.5px;
+   /* height: 566.5px;
+   width: 566.5px; */
+    max-width: 100%;
+    height: auto;
    border-radius: 8px;
-   float: left;
+   /* float: left; */
    margin-right: 10px;
 }
 .exactly{
@@ -515,11 +572,97 @@ sup{
 }
 .my-form{
     padding: 20px;
+    margin: 10px 70px;
+    border: none;
 }
 .SUform{
     padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3px;
+}
+.my-form label{
+    display: block;
+}
+.my-form input[type="text"], .my-form textarea{
+    width: 90%;
+    padding: 8px;
+    background-color: #edf0f293;
+    border: none;
+    outline: none;
 }
 
+    
+@media (max-width: 430px) {
+   
+    .navbar { display: none; }
+    
+    .phoneheader { display: block;  }
+    .phone-van{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 24px;
+    }
+    
+    body { padding-top: 60px; }
+    
+    .logo{ width: 48px;
+            height: 24px }
+            .menu{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+    .article1 { font-size: 32px; }
+    .aside1 { font-size: 16px; }
+    
+    
+    .champ { margin-top: 80px; }
+    
+    .users2 { flex-direction: column; }
+    
+    /* Reduce line margins */
+    .line { margin: 4rem 2rem 2rem; }
+    
+    /* Stack clown items */
+    .clown { 
+        flex-direction: column; 
+        padding: 0 2rem;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    /* Blue box - less padding */
+    .joker { padding: 60px 20px; }
+    .So { margin: 0; }
+    .how { font-size: 28px; }
+    
+    /* Stack smile section vertically */
+    .smile { flex-direction: column; }
+    .lol, .He { margin: 20px 0; }
+    
+    /* Image responsive */
+    .feels, .iphone img { 
+        display: block;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Stack .it sections */
+    .it { 
+        flex-direction: column;
+        margin: 60px 20px;
+    }
+    
+    /* Footer adjustments */
+    .without { 
+        flex-direction: column;
+        margin: 20px;
+        gap: 20px;
+    }
+}
 
 
 
