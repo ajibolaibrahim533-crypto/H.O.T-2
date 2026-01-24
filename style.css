@@ -734,7 +734,8 @@ sup{
         overflow: visible;
     }
     .without{
-        display: flex;
+        /* display: flex; */
+        display: flexbox;
         flex-direction: row;
         overflow: scroll;
     }
